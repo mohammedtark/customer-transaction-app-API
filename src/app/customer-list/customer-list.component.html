@@ -1,0 +1,50 @@
+<!-- src/app/customer-list/customer-list.component.html -->
+<div class="container mt-4">
+  <h2 class="text-primary">Customer List</h2>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="filterName" class="text-secondary">Filter by name:</label>
+        <input id="filterName" class="form-control border-primary" [(ngModel)]="filterName" (input)="filterCustomers()" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="filterAmount" class="text-secondary">Filter by transaction amount:</label>
+        <input id="filterAmount" type="number" class="form-control border-primary" [(ngModel)]="filterAmount" (input)="filterCustomers()" />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Transactions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of filteredCustomers" (click)="selectCustomer(customer.id, customer.name)" class="table-light">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.name }}</td>
+          <td>
+            <ul class="list-unstyled">
+              <li *ngFor="let transaction of getTransactionsForCustomer(customer.id)">
+                <span class="text-secondary">Date: {{ transaction.date }}, Amount: {{ transaction.amount }}</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <app-chart *ngIf="selectedCustomerId !== null" [transactions]="transactions" [customerId]="selectedCustomerId" [customerName]="selectedCustomerName"></app-chart>
+    </div>
+  </div>
+</div>
