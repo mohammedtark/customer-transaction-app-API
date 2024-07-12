@@ -1,9 +1,8 @@
 // src/app/customer-transaction.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Customer} from './customer';
+import { Customer } from './customer';
 import { Transaction } from './transaction';
 
 @Injectable({

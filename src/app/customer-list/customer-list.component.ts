@@ -16,7 +16,7 @@ export class CustomerListComponent implements OnInit {
   filterName: string = '';
   filterAmount: number | null = null;
   selectedCustomerId: number | null = null;
-  selectedCustomerName: string | null = null; // Add selectedCustomerName variable
+  selectedCustomerName: string | null = null;
 
   constructor(private customerTransactionService: CustomerTransactionService) {}
 
@@ -24,10 +24,16 @@ export class CustomerListComponent implements OnInit {
     this.customerTransactionService.getCustomers().subscribe(data => {
       this.customers = data;
       this.filteredCustomers = data;
+      console.log('Customers:', this.customers);
+    }, error => {
+      console.error('Error fetching customers:', error);
     });
 
     this.customerTransactionService.getTransactions().subscribe(data => {
       this.transactions = data;
+      console.log('Transactions:', this.transactions);
+    }, error => {
+      console.error('Error fetching transactions:', error);
     });
   }
 
@@ -45,6 +51,6 @@ export class CustomerListComponent implements OnInit {
 
   selectCustomer(customerId: number, customerName: string): void {
     this.selectedCustomerId = customerId;
-    this.selectedCustomerName = customerName; // Update selectedCustomerName
+    this.selectedCustomerName = customerName;
   }
 }
