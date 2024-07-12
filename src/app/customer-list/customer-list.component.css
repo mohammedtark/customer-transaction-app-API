@@ -1,23 +1,168 @@
-/* src/app/customer-list/customer-list.component.css */
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container styling */
+.container {
+  margin-top: 40px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.container:hover {
+  background-color: #e2e6ea;
+}
+
+/* Table styling */
 .table {
-  background-color: #f8f9fa; /* Light grey background */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.table:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .table thead {
-  background-color: #007bff; /* Primary blue background for table header */
-  color: #ffffff; /* White text for table header */
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.table thead th {
+  padding: 12px 15px;
 }
 
 .table tbody tr {
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .table tbody tr:hover {
-  background-color: #e2e6ea; /* Light grey background on hover */
+  background-color: #e2e6ea;
+}
+
+.table tbody td {
+  padding: 10px 15px;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 4px;
+  border-color: #007bff;
+  padding: 10px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Icon styling */
+.fa-id-badge, .fa-user, .fa-receipt, .fa-calendar-alt, .fa-dollar-sign {
+  margin-right: 8px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.fa-id-badge:hover, .fa-user:hover, .fa-receipt:hover, .fa-calendar-alt:hover, .fa-dollar-sign:hover {
+  transform: scale(1.1);
+  color: #0056b3;
+}
+
+/* Additional styling for table rows */
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+/* Card and chart styling */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 400px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #007bff;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Adding some padding to improve spacing */
+.table tbody td {
+  padding: 12px 15px;
+}
+
+.form-group {
+  margin-bottom: 24px;
 }
 
 .container {
-  background-color: #f5f5f5; /* Light beige background for the container */
-  padding: 20px;
-  border-radius: 8px; /* Rounded corners for a softer look */
+  padding: 30px;
+}
+
+h2 {
+  margin-bottom: 30px;
 }

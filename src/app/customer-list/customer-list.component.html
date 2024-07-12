@@ -1,19 +1,17 @@
-
-<!-- src/app/customer-list/customer-list.component.html -->
 <div class="container mt-4">
-  <h2 class="text-primary">Customer List</h2>
+  <h2 class="text-primary"><i class="fas fa-users"></i> Customer List</h2>
 
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label for="filterName" class="text-secondary">Filter by name:</label>
-        <input id="filterName" class="form-control border-primary" [(ngModel)]="filterName" (input)="filterCustomers()" />
+        <label for="filterName" class="text-secondary"><i class="fa fa-filter"></i> Filter by name:</label>
+        <input id="filterName" class="form-control border-primary" [(ngModel)]="filterName" (input)="filterCustomers()" placeholder="Enter customer name..." />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label for="filterAmount" class="text-secondary">Filter by transaction amount:</label>
-        <input id="filterAmount" type="number" class="form-control border-primary" [(ngModel)]="filterAmount" (input)="filterCustomers()" />
+        <label for="filterAmount" class="text-secondary"><i class="fa fa-dollar-sign"></i> Filter by transaction amount:</label>
+        <input id="filterAmount" type="number" class="form-control border-primary" [(ngModel)]="filterAmount" (input)="filterCustomers()" placeholder="Enter minimum amount..." />
       </div>
     </div>
   </div>
@@ -22,19 +20,19 @@
     <table class="table table-striped">
       <thead class="bg-primary text-white">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Transactions</th>
+          <th><i class="fa fa-id-badge"></i> ID</th>
+          <th><i class="fa fa-user"></i> Name</th>
+          <th><i class="fa fa-receipt"></i> Transactions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let customer of filteredCustomers" (click)="selectCustomer(customer.id, customer.name)" class="table-light">
           <td>{{ customer.id }}</td>
-          <td>{{ customer.name }}</td>
+          <td><i class="fa fa-user"></i> {{ customer.name }}</td>
           <td>
             <ul class="list-unstyled">
               <li *ngFor="let transaction of getTransactionsForCustomer(customer.id)">
-                <span class="text-secondary">Date: {{ transaction.date }}, Amount: {{ transaction.amount }}</span>
+                <i class="fa fa-calendar-alt"></i> <span class="text-secondary">Date: {{ transaction.date }}, <i class="fa fa-dollar-sign"></i> Amount: {{ transaction.amount }}</span>
               </li>
             </ul>
           </td>
